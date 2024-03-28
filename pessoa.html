@@ -89,6 +89,9 @@
 
     <div class="add-button">
         <button onclick="adicionarPessoa()">Adicionar Pessoa</button>
+        <br>
+        <br>
+        <button onclick="navigateTo('menu_principal.html')">Voltar ao menu</button>
     </div>
 
     <script>
@@ -106,6 +109,9 @@
                 <td>${nome}</td>
                 <td>${dataNascimento}</td>
             `;
+        }
+        function navigateTo(page) {
+            window.location.href = page;
         }
     </script>
 </body>

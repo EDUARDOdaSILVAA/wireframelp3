@@ -86,6 +86,9 @@
 
     <div class="add-button">
         <button onclick="adicionarUnidadeMedida()">Adicionar Unidade de Medida</button>
+        <br>
+        <br>
+        <button onclick="navigateTo('menu_principal.html')">Voltar ao menu</button>
     </div>
 
     <script>
@@ -101,6 +104,9 @@
                 <td>${idUnidadeMedida}</td>
                 <td>${nomeUnidadeMedida}</td>
             `;
+        }
+        function navigateTo(page) {
+            window.location.href = page;
         }
     </script>
 </body>

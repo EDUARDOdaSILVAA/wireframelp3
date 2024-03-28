@@ -92,6 +92,9 @@
 
     <div class="add-button">
         <button onclick="adicionarProduto()">Adicionar Produto</button>
+        <br>
+        <br>
+        <button onclick="navigateTo('menu_principal.html')">Voltar ao menu</button>
     </div>
 
     <script>
@@ -111,6 +114,9 @@
                 <td>${precoUnitario}</td>
                 <td>${unidadeMedida}</td>
             `;
+        }
+        function navigateTo(page) {
+            window.location.href = page;
         }
     </script>
 </body>

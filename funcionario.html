@@ -89,6 +89,9 @@
 
     <div class="add-button">
         <button onclick="adicionarFuncionario()">Adicionar Funcionário</button>
+        <br>
+        <br>
+        <button onclick="navigateTo('menu_principal.html')">Voltar ao menu</button>
     </div>
 
     <script>
@@ -106,6 +109,9 @@
                 <td>${cpfPessoa}</td>
                 <td>${senha}</td>
             `;
+        }
+        function navigateTo(page) {
+            window.location.href = page;
         }
     </script>
 </body>
