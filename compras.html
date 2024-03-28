@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Sistema do Supermercado - Compras</title>
+    <style>
+        /* Estilos CSS para o wireframe */
+
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        table {
+            margin: 0 auto;
+            border-collapse: collapse;
+            width: 80%;
+        }
+
+        th,
+        td {
+            padding: 10px;
+            text-align: center;
+            border: 1px solid #ccc;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        tr:hover {
+            background-color: #eaeaea;
+        }
+
+        .add-button {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .add-button button {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            border-radius: 4px;
+        }
+
+        .add-button button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Sistema do Supermercado - Compras</h1>
+
+    <table id="compras-table">
+        <caption>Tabela de Compras</caption>
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>Número de Compras</th>
+                <th>Total Gasto</th>
+                <th>Produtos Comprados</th>
+                <th>Número de Produtos Diferentes</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Cliente 1</td>
+                <td>5</td>
+                <td>R$ 150,00</td>
+                <td>Arroz, Feijão, Carne</td>
+                <td>3</td>
+            </tr>
+            <tr>
+                <td>Cliente 2</td>
+                <td>3</td>
+                <td>R$ 80,00</td>
+                <td>Leite, Ovos, Pão</td>
+                <td>3</td>
+            </tr>
+            <!-- Adicione mais linhas aqui para exibir mais compras -->
+        </tbody>
+    </table>
+
+    <div class="add-button">
+        <button onclick="adicionarCompra()">Adicionar Compra</button>
+    </div>
+
+    <script>
+        function adicionarCompra() {
+            var nome = prompt("Digite o nome do cliente:");
+            var numCompras = prompt("Digite o número de compras:");
+            var totalGasto = prompt("Digite o total gasto:");
+            var produtosComprados = prompt("Digite os produtos comprados:");
+            var numProdutosDiferentes = prompt("Digite o número de produtos diferentes:");
+
+            var table = document.getElementById("compras-table");
+            var tbody = table.getElementsByTagName("tbody")[0];
+
+            var newRow = tbody.insertRow();
+            newRow.innerHTML = `
+                <td>${nome}</td>
+                <td>${numCompras}</td>
+                <td>${totalGasto}</td>
+                <td>${produtosComprados}</td>
+                <td>${numProdutosDiferentes}</td>
+            `;
+        }
+    </script>
+</body>
+
+</html>

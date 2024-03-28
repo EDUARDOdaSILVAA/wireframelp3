@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Sistema do Supermercado - Produtos</title>
+    <style>
+        /* Estilos CSS para o wireframe */
+
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        table {
+            margin: 0 auto;
+            border-collapse: collapse;
+            width: 80%;
+        }
+
+        th,
+        td {
+            padding: 10px;
+            text-align: center;
+            border: 1px solid #ccc;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        tr:hover {
+            background-color: #eaeaea;
+        }
+
+        .add-button {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .add-button button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .add-button button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Sistema do Supermercado - Produtos</h1>
+
+    <table>
+        <caption>Tabela de Produtos</caption>
+        <thead>
+            <tr>
+                <th>ID do Produto</th>
+                <th>Nome do Produto</th>
+                <th>Preço Unitário</th>
+                <th>Nome da Unidade de Medida</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>Arroz</td>
+                <td>R$ 5.99</td>
+                <td>Quilograma (kg)</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Feijão</td>
+                <td>R$ 3.99</td>
+                <td>Quilograma (kg)</td>
+            </tr>
+            <!-- Adicione mais linhas aqui para exibir mais produtos -->
+        </tbody>
+    </table>
+
+    <div class="add-button">
+        <button onclick="adicionarProduto()">Adicionar Produto</button>
+    </div>
+
+    <script>
+        function adicionarProduto() {
+            var idProduto = prompt("Digite o ID do Produto:");
+            var nomeProduto = prompt("Digite o Nome do Produto:");
+            var precoUnitario = prompt("Digite o Preço Unitário:");
+            var unidadeMedida = prompt("Digite o Nome da Unidade de Medida:");
+
+            var table = document.querySelector("table");
+            var tbody = table.querySelector("tbody");
+
+            var newRow = tbody.insertRow();
+            newRow.innerHTML = `
+                <td>${idProduto}</td>
+                <td>${nomeProduto}</td>
+                <td>${precoUnitario}</td>
+                <td>${unidadeMedida}</td>
+            `;
+        }
+    </script>
+</body>
+
+</html>

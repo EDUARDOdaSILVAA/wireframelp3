@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Sistema do Supermercado - Descontos</title>
+    <style>
+        /* Estilos CSS para o wireframe */
+
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        table {
+            margin: 0 auto;
+            border-collapse: collapse;
+            width: 80%;
+        }
+
+        th,
+        td {
+            padding: 10px;
+            text-align: center;
+            border: 1px solid #ccc;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        tr:hover {
+            background-color: #eaeaea;
+        }
+
+        .add-button {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .add-button button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .add-button button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Sistema do Supermercado - Descontos</h1>
+
+    <table>
+        <caption>Tabela de Descontos</caption>
+        <thead>
+            <tr>
+                <th>ID do Desconto</th>
+                <th>Valor do Desconto</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>10%</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>20%</td>
+            </tr>
+            <!-- Adicione mais linhas aqui para exibir mais descontos -->
+        </tbody>
+    </table>
+
+    <div class="add-button">
+        <button onclick="adicionarDesconto()">Adicionar Desconto</button>
+    </div>
+
+    <script>
+        function adicionarDesconto() {
+            var idDesconto = prompt("Digite o ID do Desconto:");
+            var valorDesconto = prompt("Digite o Valor do Desconto:");
+
+            var table = document.querySelector("table");
+            var tbody = table.querySelector("tbody");
+
+            var newRow = tbody.insertRow();
+            newRow.innerHTML = `
+                <td>${idDesconto}</td>
+                <td>${valorDesconto}</td>
+            `;
+        }
+    </script>
+</body>
+
+</html>
