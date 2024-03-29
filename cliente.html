@@ -91,7 +91,7 @@
         <button onclick="adicionarCliente()">Adicionar Cliente</button>
         <br>
         <br>
-        <button a class="nav-link" href="menu_principal.html">Voltar ao menu</a>
+        <button onclick="navigateTo('menu_principal.html')">Voltar ao menu</button>
     </div>
 
     <script>
@@ -109,6 +109,9 @@
                 <td>${cpf}</td>
                 <td>${senha}</td>
             `;
+        }
+        function navigateTo(page) {
+            window.location.href = page;
         }
     </script>
 </body>
